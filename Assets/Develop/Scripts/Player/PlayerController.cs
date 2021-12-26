@@ -48,11 +48,13 @@ namespace FirstGame
             GameManager.Instance.SwitchToDefaultMode += () =>
             {
                 this.enabled = false;
+                rb.bodyType = RigidbodyType2D.Static;
             };
 
             GameManager.Instance.SwitchToGlobeMode += () =>
             {
                 this.enabled = false;
+                rb.bodyType = RigidbodyType2D.Static;
             };
 
             GameManager.Instance.SwitchToPartialMode += () =>
@@ -60,6 +62,7 @@ namespace FirstGame
                 if (GameManager.Instance.currentPlayMode == PlayMode.Default)
                 {
                     this.enabled = true;
+                    rb.bodyType = RigidbodyType2D.Dynamic;
                 }
                 else
                 {
@@ -74,6 +77,7 @@ namespace FirstGame
         {
             yield return new WaitForSeconds(2f);
             this.enabled = true;
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
 
         void Update()

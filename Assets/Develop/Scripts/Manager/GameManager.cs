@@ -28,6 +28,7 @@ namespace FirstGame
         /// 当前的输入模式
         /// </summary>
         public PlayMode currentPlayMode = PlayMode.Default;
+
         /// <summary>
         /// 切换状态的属性
         /// </summary>
@@ -80,8 +81,8 @@ namespace FirstGame
             PlayerController.Init();
             CameraController = Camera.main.GetComponent<CameraController>();
             CameraController.Init();
-            //PuzzleController = GameObject.FindWithTag("Puzzle").GetComponent<PuzzleController>();
-            //PuzzleController.Init();
+            PuzzleController = GameObject.FindWithTag("Puzzle").GetComponent<PuzzleController>();
+            PuzzleController.Init();
 
             CurrentPlayMode = PlayMode.Default;
 
